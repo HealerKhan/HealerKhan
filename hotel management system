@@ -1,0 +1,427 @@
+this code is written in c language. it was our project for programming fundamentals. 
+there can be many changes made.
+
+`(*>﹏<*)′
+
+#include<stdio.h>
+#include<string.h>
+
+// Variables declared in global scope
+
+	int id;
+	int pass; // Variable to take password from user 
+	char firstname;
+	char surname;
+	int rooms[100]; // array to store rooms
+	
+		
+	int n,s; // variable for loops
+	int i,j,k; // variable for loops
+	
+	
+	int *choice; // pointer for room choice
+	int phone;
+	int check=0000; // Password Checker
+	
+	
+	float c1=20.0;
+	float c2=50.0;
+	float c3=75.0;
+	float c4=120.0;  // Variables to calculate room costs 
+	float t1=3.00;
+	float t2=4.00;
+	float t3=6.00;
+	float t4=7.00;
+	
+	
+	int n1,n2,n3,n4;
+	float cal1,cal2,cal3,cal4; // Variables to calculate final bill
+	float tax1,tax2,tax3,tax4;
+	float cost1,cost2,cost3,cost4;
+	
+	
+	int *bank; // Pointer for bank choice
+    int *menu; // Pointer for room choice
+	
+	int flavours; // Variable to take food flavour from user 
+	
+	
+// Function  to book room
+void bookRoom();
+		
+
+// Function to order room service
+void roomService();
+
+int main () {
+	
+
+	printf("----------------Welcome--------------\n");
+	
+	printf("Personal Information:\n");
+	printf("\nEnter UserID: \n");
+	scanf("%d",&id);
+	
+	
+	
+	if(id!=0) {
+	printf("\nEnter Firstname : \n");
+	scanf("%s",&firstname);
+	printf("\nEnter surname: \n");
+	scanf("%s",&surname);
+	printf("\nEnter password: \n");
+	scanf("%d",&pass);
+	}
+
+
+
+
+
+
+if(check == pass) {
+	printf("\nEnter your Phone number: \n");
+	scanf("%d",&phone);
+	
+	
+
+    
+	 printf("\n\t----------------------------------------------------\n\t");
+	printf("\n\t                                                    \n\t");
+    printf("\n\n\t ------------'Rooms Specification'------------ \n\n\t");
+    printf("\n\t                                                    \n\t");
+    printf("\n\t----------------------------------------------------\n\t");
+    
+    
+	
+	printf("\n\t---------------Total rooms in the Hotel-----------------\n\t");
+	
+		for(i=300;i<=400;i++){
+			
+			printf("\t%d",i);
+			
+		}
+	
+	printf("\t\n\n ---------------' Room types '----------------- \n\n\t");
+	printf("\n\n1.Roof top\n2.With balcony\n3.Queen size\n4.DELUX\n\n");
+	
+            
+            // Outputs different room types and shows reserved rooms
+            
+
+
+			printf("\t\nTotal rooms at the roof top are: \n\t");
+			
+			for(j=390;j<400;j++) {
+				printf("\t%d",j);
+			}
+			printf("\n\n\t Reserved rooms at the roof top :\n\n\t");         
+			for(j=390;j<399;j++) {
+				j+=2;
+				printf("%d\t",j);
+			}
+			printf("\n\n\tAvailable rooms at the roof top : \n\n\t");
+			for(i=390;i<399;i++) {
+				i+=1;
+				printf("%d\t",i);
+			}
+			
+			printf("\n\n\t----Cost Per Night of roof top room----\t\n\n");
+			
+		    cost1= c1*t1;
+		    printf("\t\t\n %.2f$ \t\t\n",cost1);
+		
+		    printf("\t\n\nRooms with balcony:\n\n\t");
+			for(k=340;k<380;k++) {
+			
+			
+			printf("\t%d",k);
+				
+			}
+			printf("\n\n\t Balcony reservered rooms :\n\n\t");
+			for(k=340;k<380;k++) {
+				k+=6;
+				printf("%d\t",k);
+			}
+			printf("\n\n\t Available rooms with balcony: \n\n\t");
+			for(k=340;k<380;k++) {
+				k+=5;
+				printf("%d\t",k);
+			}
+			printf("\n\n\t Cost Per Night of room with balcony:\n\n\t");
+			
+			cost2=c2*t2;
+			printf("\t%.2f$\t",cost2);
+	
+		    printf("\n\tQueen size rooms(Luxuary suite):\n\t");
+			for(n=320;n<340;n++) {
+				
+				printf("\t%d",n);
+			}	
+			printf("\n\n\t Reservered queen size rooms:\n\n\t");
+			for(n=320;n<340;n++) {
+				
+				n+=3;
+				printf("%d\t",n);
+			
+			}
+			printf("\n\n\t Available queen size rooms:\n\n\t");
+			for(n=320;n<340;n++) {
+				n+=2;
+				printf("%d\t",n);
+			}
+			printf("\n\n\t Cost Per Night of queen size rooms:\n\n\t");	
+			cost3=c3*t3;
+			printf("%.2f$\t",cost3);
+	
+		    printf("\n\n\t Delux (Presidential suite) \n\n\t");
+		    
+		    for(s=380;s<390;s++) {
+		    	
+		    	printf("\t%d",s);
+			}
+			printf("\n\n\t Reserved Deluxe rooms:\n\n\t");
+			for(s=380;s<390;s++) {
+				s+=2;
+				printf("%d\t",s);
+			}
+			printf("\n\n\t Available Delxue rooms:\n\n\t ");
+			for(s=380;s<390;s++) {
+			
+			s+=1;
+			printf("%d\t",s);
+		}
+		printf("\n\n\t Cost Per Night of Deluxe Rooms:\n\n\t");
+		cost4=c4*t4;
+		printf("%.2f$\t",cost4);
+
+		    printf("reserved");
+
+			
+		
+		
+		// Bank and Room selection from user
+		
+
+		printf("\n\n\t-------------------------\n\n\t");
+		
+		printf("\n\n\t 'Payment Specification' \n\n\t");
+		
+		printf("\n\n\t-------------------------\n\n\t");
+		
+		printf("\n\t 1. Habib Bank Limited\n\t 2.Allied Bank\n\t 3.Askari Bank\n\t");
+		scanf("%d",&bank);
+		 printf("Select Room Type:\n\n1.Roof top\n2.With balcony\n3.Queen size\n4.Deluxe\n\n");
+    scanf("%d", &choice);
+	
+		
+ 
+ // Function to book room
+  
+ bookRoom(&bank, &choice);
+
+ 	
+	 
+	 printf("\t\n----------Room Service-----------\n");
+printf("1.burgers\n2.drinks\n");
+scanf("%d", &menu);
+
+
+//Function to order room service
+ roomService(&menu);
+
+	
+}
+ else if(check!=pass)
+{
+	printf("Incorrect Password");
+}
+return 0;
+}
+
+
+
+
+//Function to order room service
+
+
+
+void roomService(int *menu)
+{
+		
+switch (*menu) {
+
+
+case 1:
+    printf("Variety of burgers: \n");
+
+    printf("1.Crunch burger\n2.Zigzag burger\n3.Zinger burger\n4.Beef burger\n");
+    scanf("%d", &flavours);
+    switch (flavours) {
+    case 1:
+        printf("comes with child toys");
+        break;
+    case 2:
+        printf("comes with drink");
+        break;
+    case 3:
+        printf("comes with meal");
+        switch (*menu) {
+        case 1:
+            printf("fries and drink comes with it");
+            break;
+        }
+        break;
+    case 4:
+        printf("beef burgers contain flavours:\n");
+        switch (*menu) {
+        case 1:
+            printf("1.wanted burger\n");
+            printf("2.beef loaded burger\n");
+            printf("3.grilled burger\n");
+            scanf("%d", &flavours);
+            switch (flavours) {
+            case 1:
+                printf("Rs 800");
+                break;
+            case 2:
+                printf("Rs 1000");
+                break;
+            case 3:
+                printf("Rs 900");
+                break;
+            }
+        }
+        break;
+    }
+    break;
+case 2:
+	
+ printf("Drinks menu:\n");
+            printf("1. Coke\n");
+            printf("2. Sprite\n");
+            printf("3. Fanta\n");
+            // Adds more drinks as needed
+            break;
+}
+printf("\nDial 2 on the phone to order room service \n");	
+}
+
+
+// Function to book room
+
+void bookRoom(int *bank, int *choice)
+{
+
+
+	if (*bank == 1) {
+
+    if (*choice == 1) {
+        printf("\n\nNumber of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal1 = n1 * cost1;
+        printf("\n\t Amount required without tax : %.1f$ \n\t", cal1);
+        tax1 = cal1 + 30;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax1);
+        printf("\n\n\t ------Bank Recepit---- \n\n\t");
+    } else if (*choice == 2) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal2 = n1 * cost2;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal2);
+        tax2 = cal2 + 45;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax2);
+    } else if (*choice == 3) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal3 = n1 * cost3;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal3);
+        tax3 = cal3 + 55;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax3);
+    } else if (*choice == 4) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal4 = n1 * cost4;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal4);
+        tax4 = cal4 + 65;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax4);
+    }
+}  
+
+
+
+
+
+if (*bank == 2) {
+
+
+    if (*choice == 1) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal1 = n1 * cost1;
+        printf("\n\t Amount required without tax : %.1f$ \n\t", cal1);
+        tax1 = cal1 + 20;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax1);
+    } else if (*choice == 2) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal2 = n1 * cost2;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal2);
+        tax2 =cal2 + 30;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax2);
+    } else if (*choice == 3) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal3 = n1 * cost3;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal3);
+        tax3 = cal3 + 45;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax3);
+    } else if (*choice == 4) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal4 = n1 * cost4;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal4);
+        tax4 = cal4 + 55;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax4);
+    }
+} 
+
+
+
+
+
+
+if (*bank == 3) {
+    
+    if (*choice == 1) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal1 = n1 * cost1;
+        printf("\n\t Amount required without tax : %.1f$ \n\t", cal1);
+        tax1 = cal1 + 25;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax1);
+    } else if (*choice == 2) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal2 = n1 * cost2;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal2);
+        tax2 = cal2 + 45;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax2);
+    } else if (*choice == 3) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal3 = n1 * cost3;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal3);
+        tax3 = cal3 + 55;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax3);
+    } else if (*choice == 4) {
+        printf("\n\n\t Number of nights to stay \n\n\t");
+        scanf("%d", &n1);
+        cal4 = n1 * cost4;
+        printf("\n\t Amount required without tax : %.1f$\n\t", cal4);
+        tax4 = cal4 + 60;
+        printf("\n\t Final amount required for booking room : %.1f$\t", tax4);
+    }
+}
+}
+
+
